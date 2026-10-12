@@ -52,4 +52,87 @@ cards.forEach(c=>{c.addEventListener('click',e=>{if(e.target.tagName!=='BUTTON')
 document.getElementById('enquire').addEventListener('click',()=>{const selected=cards.filter(c=>c.classList.contains('selected')).map(c=>c.dataset.name);const message=selected.length?`Hey Leah, I’m interested in ${selected.join(', ')}. Please tell me the next step.`:`Hey Leah, I’m interested in Role Boosters. Please tell me the next step.`;location.href='https://wa.me/919288174504?text='+encodeURIComponent(message)});
 const tabs=[...document.querySelectorAll('.tab')];tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=p.id!==t.dataset.tab)}));const pricingTabs=[...document.querySelectorAll('.pricing-tab')];pricingTabs.forEach(t=>t.addEventListener('click',()=>{pricingTabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');document.getElementById('setupPanel').hidden=t.dataset.plan!=='setup';document.getElementById('retainerPanel').hidden=t.dataset.plan!=='retainer';}));
 </script>
+  <!-- Floating WhatsApp Button -->
+<a
+  href="https://wa.me/919288174504?text=Hi%2C%20I%27d%20like%20to%20know%20more."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contact us on WhatsApp"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M20.52 3.48A11.77 11.77 0 0 0 12.13 0
+    C5.58 0 .25 5.33.25 11.88c0 2.09.55 4.13
+    1.6 5.93L.15 24l6.34-1.66a11.9 11.9 0 0 0
+    5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88
+    0-3.17-1.23-6.15-3.5-8.41zM12.14 21.7a9.86
+    9.86 0 0 1-5.02-1.37l-.36-.21-3.76.99
+    1-3.66-.24-.38a9.82 9.82 0 0 1-1.51-5.19
+    c0-5.45 4.44-9.89 9.9-9.89a9.8 9.8 0 0 1
+    7 2.9 9.8 9.8 0 0 1 2.9 6.99c0 5.46-4.44
+    9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.77-.87
+    -2.05-.97-.28-.1-.47-.15-.67.15-.2.3-.77
+    .97-.94 1.17-.17.2-.35.22-.65.07-.3-.15
+    -1.26-.46-2.4-1.47-.89-.79-1.49-1.77
+    -1.66-2.07-.18-.3-.02-.46.13-.61.13-.13
+    .3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05
+    -.37-.03-.52-.07-.15-.67-1.61-.92-2.21
+    -.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52
+    .07-.79.37-.27.3-1.04 1.02-1.04 2.49
+    0 1.47 1.07 2.89 1.22 3.09.15.2 2.1
+    3.2 5.08 4.49.71.31 1.27.5 1.7.64.72
+    .23 1.37.2 1.88.12.58-.09 1.77-.72
+    2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12
+    -.27-.2-.57-.35z"/>
+  </svg>
+  <span> Hi Leah, I want a Role Booster. Talk to me.</span>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .whatsapp-float:hover {
+    background: #128C7E;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  .whatsapp-float:focus-visible {
+    outline: 3px solid #128C7E;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 480px) {
+    .whatsapp-float {
+      bottom: 16px;
+      right: 16px;
+      padding: 13px 16px;
+    }
+  }
+</style>
 </body></html>
